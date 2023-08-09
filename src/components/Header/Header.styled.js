@@ -4,7 +4,7 @@ const StyledHeader = styled.div`
   display: flex;
   gap: 20px;
   padding: 8px 24px;
-  background-color: #f1f1f1;
+  background-color: #ccc;
 `;
 
 export default StyledHeader
