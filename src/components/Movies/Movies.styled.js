@@ -15,12 +15,12 @@ transition: all .3s cubic-bezier(0, 0, 0.43, 1.49);
 transition-property: width, border-radius;
 z-index: 1;
 position: relative;
-
+background-color: #f1f1f1;
 height: 50px;
 font-family: sans-serif;
 border: 0;
 color: #2f2f2f;
-font-size: 1.8rem;
+font-size: 20px;
 
 &:not(:placeholder-shown) {
 border-radius: .7rem 0 0 .7rem;
@@ -48,6 +48,7 @@ border-radius: .7rem;
 margin-bottom: 24px;
 `
 const MovieFormTitle = styled.p`
+font-family: 'Kanit', sans-serif;
 margin-bottom: 24px;
 font-size: 24px;
 font-weight: 500;
@@ -98,10 +99,15 @@ background-color: rgba(96,96,96,.5);
 const MovieElementImage = styled.img`
 width: 100%;
     object-fit: cover;
-    margin-bottom: 8px;
 `
+
 const MovieElementTitle = styled.p`
-color: white;
+margin-bottom: 8px;
+padding: 10px 4px;
+font-weight: 700;
+text-align: left;
+color: #f1f1f1;
+text-align: center;
 `
 
 

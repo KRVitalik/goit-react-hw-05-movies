@@ -2,7 +2,7 @@ import { getMovieReviews } from "components/API/getFilm";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { ReviewsContainer, ReviewsElement, ReviewsText } from "./Reviews.styled";
+import { ReviewsAuthor, ReviewsContainer, ReviewsElement, ReviewsText, ReviewsUserIcon } from "./Reviews.styled";
 
 function Reviews() {
     const params = useParams()
@@ -17,7 +17,8 @@ function Reviews() {
         ? <ReviewsContainer>
         {reviews.map((review) => {
             return <ReviewsElement key={ review.id }>
-            <h3>{review.author}</h3>
+                <ReviewsAuthor>{review.author}</ReviewsAuthor>
+                <ReviewsUserIcon>...</ReviewsUserIcon>
             {<ReviewsText>{review.content}</ReviewsText>}
         </ReviewsElement>})}
         </ReviewsContainer>

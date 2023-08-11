@@ -1,7 +1,7 @@
 import { getMovieById } from "components/API/getFilm";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { ImageMovieDetails, DivDetailsContainer, UlButtonMovieDetails, MovieDetailsInfo, MovieDetailsContainer } from "./MovieDetails.styled";
+import { ImageMovieDetails, DivDetailsContainer, UlButtonMovieDetails, MovieDetailsInfo, MovieDetailsContainer, MovieDetailsInfoText, MovieDetailsBackBtn, MovieDetailsCastReviewBtn, MovieDetailsHead, MovieDetailsShortReview, MovieDetailsGenres, MovieDetailsRuntime, MovieDetailsGenresElement, MovieDetailsOverviewText } from "./MovieDetails.styled";
 import Spinner from "components/Spiner/Spinner";
 import Video from "components/Video/Video";
 
@@ -29,25 +29,26 @@ return `Time: ${hours} hours ${minutes}min.`
     
     return (<>
         <DivDetailsContainer>
-            <Link to={backLinkLocationRef.current}>Go back</Link>
+            <Link to={backLinkLocationRef.current}><MovieDetailsBackBtn>Go back</MovieDetailsBackBtn></Link>
             <MovieDetailsContainer>
                 {movie.poster_path && <ImageMovieDetails src={`${imgLink}${movie.poster_path}`} alt="" />}
                 <MovieDetailsInfo>
-                    <h1>{movie.title}</h1>
-                    <p>{runtime()}</p>
-                    <p></p>
-                    <h2>Overview</h2>
-                    <p>{movie.overview}</p>
-                    <h3>Genres</h3>
+                    <MovieDetailsInfoText>
+                        <MovieDetailsHead>{movie.title}</MovieDetailsHead>
+                    <MovieDetailsRuntime>{runtime()}</MovieDetailsRuntime>
+                    <MovieDetailsShortReview>Overview</MovieDetailsShortReview>
+                    <MovieDetailsOverviewText>{movie.overview}</MovieDetailsOverviewText>
+                    <MovieDetailsGenres>Genres</MovieDetailsGenres>
                     <ul>
-                        {movie.id && movie.genres.map((el) => { return <li key={el.name}> {el.name}</li> }) }
+                        {movie.id && movie.genres.map((el) => { return <MovieDetailsGenresElement key={el.name}> {el.name}</MovieDetailsGenresElement> }) }
                     </ul>
+                    </MovieDetailsInfoText>
                     <Video id={ params.movieId } />
                 </MovieDetailsInfo>
             </MovieDetailsContainer>
             <UlButtonMovieDetails>
-        <Link to='cast'>Cast</Link>
-        <Link to='reviews'>Reviews</Link>
+        <Link to='cast'><MovieDetailsCastReviewBtn>Cast</MovieDetailsCastReviewBtn></Link>
+        <Link to='reviews'><MovieDetailsCastReviewBtn>Reviews</MovieDetailsCastReviewBtn></Link>
             </UlButtonMovieDetails>
     </DivDetailsContainer>
         <Suspense fallback={<Spinner/>}>
