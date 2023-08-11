@@ -18,8 +18,11 @@ function Video ({id}) {
       height: '390',
       width: '640',
         playerVars: {
-          modestbranding: 1,
+                  modestbranding: 1,
+        // https://developers.google.com/youtube/player_parameters
           autoplay: 0,
+          enablejsapi: 1,
+          origin: 'https://krvitalik.github.io/',
       },
     };
 
