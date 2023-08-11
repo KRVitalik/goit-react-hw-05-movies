@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { TrendingTitle, TrendingContainer, TrendingElement, TrendingImage, TrendingMovieTitle } from "./HomeTrending.styled";
+import PropTypes from 'prop-types';
+import {  TrendingContainer, TrendingElement, TrendingImage, TrendingMovieTitle } from "./HomeTrending.styled";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-
-function HomeTrending({movies}) {
+function HomeTrending({ movies }) {
     const imgLink = 'https://image.tmdb.org/t/p/w500';
-    
+    localStorage.clear();
         const settings = {
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 8,
+        slidesToShow: 6,
         slidesToScroll: 4,
         initialSlide: 0,
         responsive: [
@@ -45,10 +45,9 @@ function HomeTrending({movies}) {
 
     return (
         <div>
-            <TrendingTitle>Trending today</TrendingTitle>
             <TrendingContainer>
                 <Slider {...settings}>
-                    {movies.map(movie =>
+                    {movies?.map(movie =>
                     <Link to={`/movies/${movie.id}`} key={movie.id}>
                         <TrendingElement>
                             <TrendingImage src={`${imgLink}${movie.poster_path}`} alt={movie.title} />
@@ -59,5 +58,10 @@ function HomeTrending({movies}) {
             </TrendingContainer>
         </div>);
 }
+
+HomeTrending.propTypes = {
+    movies: PropTypes.array,
+}
+
 
 export default HomeTrending;

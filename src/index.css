@@ -1,4 +1,12 @@
-@import-normalize; /* bring in normalize.css styles */
+@import-normalize;
+
+#root {
+  height: 100vh;
+  height: 100vh;
+  background-image: url('../public/img.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 body {
   margin: 0;
@@ -7,7 +15,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #e1e1e1;
+  background: #e49a29;
 }
 
 code {
@@ -22,7 +30,10 @@ ul {
   padding: 0;
 }
 
-p {
+p,
+h1,
+h2,
+h3 {
   margin: 0;
   padding: 0;
 }

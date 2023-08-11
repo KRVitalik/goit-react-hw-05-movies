@@ -8,8 +8,8 @@ const options = {
 
 const BASE_URL = 'https://api.themoviedb.org/3/'
 
-export async function getTrendingMovies() {
-    const response = await fetch(`${BASE_URL}trending/movie/day?language=en-US`, options);
+export async function getTrendingMovies(value = 'day') {
+    const response = await fetch(`${BASE_URL}trending/movie/${value}?language=en-US`, options);
     return await response.json();
             
 }
@@ -31,5 +31,10 @@ export async function getActorsFilm(id) {
 
 export async function getSearchFilm(query) {
     const response = await fetch(`${BASE_URL}search/movie?query=${query}&include_adult=false&language=en-US&page=1`, options)
+  return await response.json();
+}
+
+export async function getMovieVideo(id) {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
   return await response.json();
 }

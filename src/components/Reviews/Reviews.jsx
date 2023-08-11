@@ -2,6 +2,7 @@ import { getMovieReviews } from "components/API/getFilm";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { ReviewsContainer, ReviewsElement, ReviewsText } from "./Reviews.styled";
 
 function Reviews() {
     const params = useParams()
@@ -13,13 +14,13 @@ function Reviews() {
     }, [params.movieId])
     
     return (reviews.length > 0
-        ? <ul>
+        ? <ReviewsContainer>
         {reviews.map((review) => {
-            return <li key={ review.id }>
+            return <ReviewsElement key={ review.id }>
             <h3>{review.author}</h3>
-            {<p>{review.content}</p>}
-        </li>})}
-        </ul>
+            {<ReviewsText>{review.content}</ReviewsText>}
+        </ReviewsElement>})}
+        </ReviewsContainer>
         : <p>We don't have any reviews for this movie</p>);
 }
 

@@ -21,12 +21,15 @@ overflow: hidden;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-min-height: 280px;
+min-height: 300px;
 border-radius:10px;
 border: 1px solid #ccc;
-transition: box-shadow .3s;
+transition:box-shadow .3s, transform .3s, background-color .3s;
+background-color: rgba(96,96,96,.5);
 &:hover{
-    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    box-shadow: 0 0 11px rgba(33,33,33,.9); 
+    transform: translate(0, 10px);
+    background-color: rgba(96,96,96,1);
 }
 `
 
@@ -34,6 +37,7 @@ const TrendingMovieTitle = styled.p`
 margin-bottom: 8px;
 padding: 0 4px;
 text-align: left;
+color: white;
 `
 
 export {TrendingContainer, TrendingImage, TrendingElement, TrendingTitle, TrendingMovieTitle}

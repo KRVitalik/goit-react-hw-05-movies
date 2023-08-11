@@ -1,6 +1,7 @@
 import { getSearchFilm } from 'components/API/getFilm'
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { MovieButton, MovieContainer, MovieElement, MovieElementContainer, MovieElementImage, MovieElementTitle, MovieForm, MovieFormTitle, MovieInput, MovieLabel } from './Movies.styled';
 
 const Movies = () => {
   const [movieSearch, setMovieSearch] = useState({});
@@ -9,6 +10,7 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const movie = searchParams.get('movie') ?? '';
   const location = useLocation()
+  const imgLink = 'https://image.tmdb.org/t/p/w500';
   
   const updateQueryString = evt => { 
     evt.target.value !== '' ? setSearchParams({movie: evt.target.value}) : setSearchParams({});
@@ -40,20 +42,30 @@ setMovieInputValue(movie)
 setSearchParams('')
   }
 
-
     return (
-      <>
-        <form>
-        <button onClick={handleButtonClick} type='submit'>Search</button>
-        <input
+      <MovieContainer>
+        <MovieFormTitle>Find your favorite movie</MovieFormTitle>
+        <MovieForm>
+          <MovieButton onClick={handleButtonClick} type='submit'>Go</MovieButton>
+          <MovieLabel htmlFor="search">Search movies</MovieLabel>
+        <MovieInput
           value={movie}
-          onChange={updateQueryString}
-          type="text" />
-        <ul>
-          {movieSearch.results && movieSearch.results.map((el)=>{return <li key={`${el.id}`}><Link to={`/movies/${el.id}`} state={{from: location}}>{el.title}</Link></li> })}
-        </ul>
-        </form>
-        </>
+            onChange={updateQueryString}
+            placeholder="Search..."
+            autoFocus
+            required
+          type="search" />
+        </MovieForm>
+        <MovieElementContainer>
+          {movieSearch.results && movieSearch.results.map((movie) => {
+            return <Link to={`/movies/${movie.id}`} state={{ from: location }} key={movie.id}>
+              <MovieElement>
+                {movie.poster_path && <MovieElementImage src={`${imgLink}${movie.poster_path}`} alt={movie.title} />}
+                <MovieElementTitle>{movie.title}</MovieElementTitle>
+              </MovieElement></Link>
+          })}
+        </MovieElementContainer>
+        </MovieContainer>
   )
 }
 
