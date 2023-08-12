@@ -1,7 +1,7 @@
 import { getSearchFilm } from 'components/API/getFilm'
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
-import { MovieButton, MovieContainer, MovieElement, MovieElementContainer, MovieElementImage, MovieElementTitle, MovieForm, MovieFormTitle, MovieInput, MovieLabel } from './Movies.styled';
+import { MovieButton, MovieContainer, MovieElement, MovieElementContainer, MovieElementImage, MovieElementTitle, MovieErrorTitle, MovieForm, MovieFormTitle, MovieInput, MovieLabel } from './Movies.styled';
 
 const Movies = () => {
   const [movieSearch, setMovieSearch] = useState({});
@@ -27,7 +27,7 @@ const Movies = () => {
   useEffect(() => {
     if(movieInputValue === '')return
     getSearchFilm(movieInputValue)
-    .then((data) => {
+      .then((data) => {
 
       setMovieSearch(data) 
       localStorage.setItem('movies', JSON.stringify(data))
@@ -56,7 +56,7 @@ setSearchParams('')
             required
           type="search" />
         </MovieForm>
-        <MovieElementContainer>
+        {movieSearch.total_results !== 0 ? <MovieElementContainer>
           {movieSearch.results && movieSearch.results.map((movie) => {
             return <Link to={`/movies/${movie.id}`} state={{ from: location }} key={movie.id}>
               <MovieElement>
@@ -64,7 +64,7 @@ setSearchParams('')
                 <MovieElementTitle>{movie.title}</MovieElementTitle>
               </MovieElement></Link>
           })}
-        </MovieElementContainer>
+        </MovieElementContainer> : <MovieErrorTitle>We don't find any movie with this title, please try to enter valid movie title</MovieErrorTitle>}
         </MovieContainer>
   )
 }

@@ -38,3 +38,8 @@ export async function getMovieVideo(id) {
     const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`, options)
   return await response.json();
 }
+
+export async function getRandomUser() {
+    const response = await fetch('https://randomuser.me/api/?results=50')
+  return await response.json();
+}

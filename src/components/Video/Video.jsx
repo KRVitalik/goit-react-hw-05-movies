@@ -5,8 +5,6 @@ import YouTube from 'react-youtube';
 function Video ({id}) {
     const [video, setVideo] = useState('')
 
-    console.log(video)
-
             useEffect(() => {
         getMovieVideo(id)
             .then((data) => {

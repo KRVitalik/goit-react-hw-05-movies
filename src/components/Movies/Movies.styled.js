@@ -110,9 +110,23 @@ color: #f1f1f1;
 text-align: center;
 `
 
+const MovieErrorTitle = styled.p`
+display:inline-block;
+height: auto;
+
+font-family: 'Kanit', sans-serif;
+font-size: 18px;
+
+box-sizing: border-box;
+border: 1px solid #f1f1f1;
+border-radius: 24px;
+background-color: rgb(200,200,200,.9);
+padding: 9px;
+`
 
 
-export { MovieElementTitle, MovieFormTitle, MovieContainer, MovieLabel, MovieForm, MovieButton, MovieInput, MovieElement, MovieElementContainer, MovieElementImage}
+
+export {MovieErrorTitle, MovieElementTitle, MovieFormTitle, MovieContainer, MovieLabel, MovieForm, MovieButton, MovieInput, MovieElement, MovieElementContainer, MovieElementImage}
 
 
 
