@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 const ReviewsContainer = styled.ul`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 24px;
   padding: 24px;
 `;
 
 const ReviewsElement = styled.li`
-  width: 45%;
   border: 2px solid #ccc;
   border-radius: 24px;
   box-sizing: border-box;
