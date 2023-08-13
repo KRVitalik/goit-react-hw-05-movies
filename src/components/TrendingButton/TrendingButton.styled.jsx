@@ -4,7 +4,6 @@ const RadioButtonContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
-  /* flex-direction: column; */
   padding: 24px;
 `;
 

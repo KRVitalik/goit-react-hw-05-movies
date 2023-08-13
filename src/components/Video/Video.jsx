@@ -3,12 +3,12 @@ import React, { useEffect, useState } from 'react'
 import YouTube from 'react-youtube';
 
 function Video ({id}) {
-    const [video, setVideo] = useState('')
+    const [video, setVideo] = useState([])
 
             useEffect(() => {
         getMovieVideo(id)
             .then((data) => {
-                return setVideo(data.results[0].key)
+                return setVideo(data.results)
         }).catch(err => console.error(err));
         }, [id])
 
@@ -17,10 +17,9 @@ function Video ({id}) {
       width: '640',
         playerVars: {
                   modestbranding: 1,
-        // https://developers.google.com/youtube/player_parameters
-          autoplay: 0,
+          autoplay: 1,
           enablejsapi: 1,
-          origin: 'https://krvitalik.github.io/',
+          origin: document.location.origin,
       },
     };
 
@@ -28,8 +27,8 @@ function Video ({id}) {
     event.target.pauseVideo();
   }
 
-    return <YouTube
-        videoId={video}
+    return video.length > 0 && <YouTube
+        videoId={video[0].key}
         opts={opts}
         onReady={_onReady} />;
   }

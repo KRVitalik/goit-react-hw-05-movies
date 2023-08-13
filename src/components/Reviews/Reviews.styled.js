@@ -1,18 +1,14 @@
 import styled from 'styled-components';
 
 const ReviewsContainer = styled.ul`
-
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
   padding: 24px;
-
 `;
 
 const ReviewsElement = styled.li`
   width: 45%;
-  /* max-height: 420px;  */
-  /* overflow-y:auto; */
   border: 2px solid #ccc;
   border-radius: 24px;
   box-sizing: border-box;
@@ -23,7 +19,6 @@ const ReviewsText = styled.p`
 margin-top: 24px;
 font-size: 14px
 `;
-
 
 const ReviewsAuthor = styled.h3`
 font-family: 'Kanit', sans-serif;

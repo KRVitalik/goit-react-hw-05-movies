@@ -93,7 +93,6 @@ background-color: rgba(96,96,96,.5);
     transform: translate(0, 10px);
     background-color: rgba(96,96,96,1);
 }
-
 `
 
 const MovieElementImage = styled.img`
@@ -116,15 +115,12 @@ height: auto;
 
 font-family: 'Kanit', sans-serif;
 font-size: 18px;
-
 box-sizing: border-box;
 border: 1px solid #f1f1f1;
 border-radius: 24px;
 background-color: rgb(200,200,200,.9);
 padding: 9px;
 `
-
-
 
 export {MovieErrorTitle, MovieElementTitle, MovieFormTitle, MovieContainer, MovieLabel, MovieForm, MovieButton, MovieInput, MovieElement, MovieElementContainer, MovieElementImage}
 

@@ -16,7 +16,6 @@ const TrendingButton = () => {
         }, [value])
 
     return (<div>
-
         <Formik
             initialValues={{
                 picked: 'day',

@@ -8,7 +8,6 @@ const DivDetailsContainer = styled.div`
 `;
 
 const ImageMovieDetails = styled.img`
-/* min-width: 350px; */
 height: 85vh;
 border-radius: 24px;
 `

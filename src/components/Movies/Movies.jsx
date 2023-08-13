@@ -23,7 +23,6 @@ const Movies = () => {
     setMovieSearch(parsedLocalStMovies)
   }, [])
 
-
   useEffect(() => {
     if(movieInputValue === '')return
     getSearchFilm(movieInputValue)
@@ -31,7 +30,6 @@ const Movies = () => {
 
       setMovieSearch(data) 
       localStorage.setItem('movies', JSON.stringify(data))
-
 
         }).catch(err => console.error(err));
   }, [movieInputValue])

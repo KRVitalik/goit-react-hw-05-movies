@@ -12,7 +12,6 @@ margin: 0 auto;
 const TrendingImage = styled.img`
     width: 100%;
     object-fit: cover;
-    margin-bottom: 8px;
 `
 
 const TrendingElement = styled.li`
@@ -21,7 +20,6 @@ overflow: hidden;
 flex-direction: column;
 justify-content: flex-start;
 align-items: center;
-min-height: 385px;
 border-radius:10px;
 border: 1px solid #ccc;
 transition:box-shadow .3s, transform .3s, background-color .3s;
@@ -34,11 +32,27 @@ background-color: rgba(96,96,96,.5);
 `
 
 const TrendingMovieTitle = styled.p`
-margin-bottom: 8px;
-padding: 10px;
-font-weight: 700;
-text-align: center;
-color: #f1f1f1;
-`
+    position: absolute;
+    bottom: -50%;
+    padding: 8px 8px 12px 8px;
+    width: 100%;
+    overflow: hidden;
+    font-weight: 700;
+    text-align: center;
+    transition: opacity 250ms ease;
+    opacity: 0;
+    color: #4d2903;
+    box-sizing: border-box;
+
+    ${TrendingElement}:hover &,
+    ${TrendingElement}:active & {
+        position: absolute;
+        bottom: 0;
+        display: block;
+        background-color: #e49a29;
+        opacity: 1;
+    padding: 8px 8px 12px 8px;
+    }
+`;
 
 export {TrendingContainer, TrendingImage, TrendingElement, TrendingTitle, TrendingMovieTitle}

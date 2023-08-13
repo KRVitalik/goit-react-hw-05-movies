@@ -26,7 +26,6 @@ function MovieDetails() {
 return `Time: ${hours} hours ${minutes}min.`
     }
     
-    
     return (<>
         <DivDetailsContainer>
             <Link to={backLinkLocationRef.current}><MovieDetailsBackBtn>Go back</MovieDetailsBackBtn></Link>

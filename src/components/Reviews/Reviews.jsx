@@ -9,8 +9,6 @@ function Reviews() {
     const [reviews, setReviews] = useState([])
     const [users, setUsers] = useState([])
 
-console.log(users)
-
     useEffect(() => {
         getMovieReviews(params.movieId).then(data =>
             setReviews(data.results))
@@ -21,15 +19,12 @@ console.log(users)
     }, []);
     
     const randomUserForReview = () => {
-        
         if (reviews.length > 0) {
             const randomIndex = Math.floor(Math.random() * users.length)
         const user = users[randomIndex]
         return  user.picture.thumbnail
         }
-        
     }
-
 
     return (reviews.length > 0
         ? <ReviewsContainer>

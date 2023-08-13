@@ -8,7 +8,6 @@ const Layout = () => {
       <>
       <Header />
       <Suspense fallback={<Spinner/>}>
-                
           <Outlet />
       </Suspense>
       </>
