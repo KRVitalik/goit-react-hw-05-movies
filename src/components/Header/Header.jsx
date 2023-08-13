@@ -1,11 +1,12 @@
 import { NavLink } from "react-router-dom";
-import  { StyledHeader, StyledHeaderButton } from "./Header.styled";
+import  { StyledHeader, StyledHeaderButton, StyledLink } from "./Header.styled";
 
 function Header() {
-    return ( 
+    
+        return ( 
         <StyledHeader>
-            <NavLink to="/"><StyledHeaderButton>Home</StyledHeaderButton></NavLink>
-            <NavLink to="movies"><StyledHeaderButton>Movie</StyledHeaderButton></NavLink>
+            <StyledLink to="/"><StyledHeaderButton>Home</StyledHeaderButton></StyledLink>
+            <StyledLink to="movies"><StyledHeaderButton>Movie</StyledHeaderButton></StyledLink>
         </StyledHeader>
      );
 }

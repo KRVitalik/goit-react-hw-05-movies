@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledHeader = styled.div`
@@ -21,4 +22,13 @@ const StyledHeaderButton = styled.button`
   }
 `;
 
-export {StyledHeader, StyledHeaderButton} 
+const StyledLink = styled(NavLink)`
+color: #f1f1f1;
+   &.active > ${StyledHeaderButton}{
+    color: orange;
+    box-shadow: 0 0 11px rgba(33,33,33,.9); 
+    background-color: #6e4507;
+  }
+`;
+
+export {StyledLink, StyledHeader, StyledHeaderButton} 
