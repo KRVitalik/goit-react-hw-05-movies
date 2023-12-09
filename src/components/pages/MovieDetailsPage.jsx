@@ -1,12 +1,7 @@
-import MovieDetails from 'components/MovieDetails/MovieDetails'
-import React from 'react'
+import MovieDetails from 'components/MovieDetails/MovieDetails';
 
 const MovieDetailsPage = () => {
-  return (
-    <>
-    <MovieDetails />
-    </>
-  )
-}
+  return <MovieDetails />;
+};
 
-export default MovieDetailsPage
+export default MovieDetailsPage;

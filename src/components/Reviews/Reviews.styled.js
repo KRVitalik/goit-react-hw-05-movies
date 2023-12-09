@@ -21,7 +21,7 @@ font-size: 14px
 
 const ReviewsAuthor = styled.h3`
 font-family: 'Kanit', sans-serif;
-`
+`;
 
 const ReviewsUserIcon = styled.img`
 display: block;
@@ -31,12 +31,11 @@ width: 50px;
 border: 1px solid black;
 text-align: center;
 `
+
 const ReviewsTextMessage = styled.p`
 margin-top: 24px;
 font-size: 14px;
 padding: 12px 0 48px 24px;
 `;
 
-
-
-export {ReviewsTextMessage, ReviewsUserIcon, ReviewsAuthor, ReviewsContainer, ReviewsElement, ReviewsText}
+export { ReviewsTextMessage, ReviewsUserIcon, ReviewsAuthor, ReviewsContainer, ReviewsElement, ReviewsText };

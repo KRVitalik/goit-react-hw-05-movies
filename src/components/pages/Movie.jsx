@@ -1,10 +1,7 @@
-import Movies from 'components/Movies/Movies'
-import React from 'react'
+import Movies from 'components/Movies';
 
 const Movie = () => {
-  return (
-      <><Movies /></>
-  )
-}
+  return <Movies />;
+};
 
-export default Movie
+export default Movie;

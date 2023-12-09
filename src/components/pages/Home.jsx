@@ -1,8 +1,7 @@
-import TrendingButton from "components/TrendingButton/TrendingButton";
+import TrendingButton from 'components/TrendingButton/TrendingButton';
 
-function Home() {
-    return (
-        <><TrendingButton/></>);
-}
+const Home = () => {
+  return <TrendingButton />;
+};
 
 export default Home;

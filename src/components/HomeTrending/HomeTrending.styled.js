@@ -55,4 +55,10 @@ const TrendingMovieTitle = styled.p`
     }
 `;
 
-export {TrendingContainer, TrendingImage, TrendingElement, TrendingTitle, TrendingMovieTitle}
+export {
+    TrendingContainer,
+    TrendingImage,
+    TrendingElement,
+    TrendingTitle,
+    TrendingMovieTitle
+};
